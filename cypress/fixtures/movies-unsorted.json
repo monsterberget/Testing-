@@ -1,0 +1,16 @@
+{
+  "Search": [
+    {
+      "Title": "Superman",
+      "Poster": "https://via.placeholder.com/150?text=Superman"
+    },
+    {
+      "Title": "Avengers",
+      "Poster": "https://via.placeholder.com/150?text=Avengers"
+    },
+    {
+      "Title": "Batman",
+      "Poster": "https://via.placeholder.com/150?text=Batman"
+    }
+  ]
+}

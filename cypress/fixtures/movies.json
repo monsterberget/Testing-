@@ -1,0 +1,16 @@
+{
+  "Search": [
+    {
+      "Title": "Batman Begins",
+      "Poster": "https://via.placeholder.com/150?text=Batman+Begins"
+    },
+    {
+      "Title": "The Dark Knight",
+      "Poster": "https://via.placeholder.com/150?text=The+Dark+Knight"
+    },
+    {
+      "Title": "The Dark Knight Rises",
+      "Poster": "https://via.placeholder.com/150?text=The+Dark+Knight+Rises"
+    }
+  ]
+}

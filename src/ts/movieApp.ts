@@ -1,21 +1,28 @@
 import { IMovie } from "./models/Movie";
 import { getData } from "./services/movieService";
+import { movieSort } from "./functions";
 
 let movies: IMovie[] = [];
+let desc = true;
 
 export const init = () => {
-  let form = document.getElementById("searchForm") as HTMLFormElement;
+  const form = document.getElementById("searchForm") as HTMLFormElement;
   form.addEventListener("submit", (e: SubmitEvent) => {
     e.preventDefault();
     handleSubmit();
   });
+
+  const sortBtn = document.getElementById("sortBtn") as HTMLButtonElement;
+  sortBtn.addEventListener("click", () => {
+    handleSort();
+  });
 };
 
 export async function handleSubmit() {
-  let searchText = (document.getElementById("searchText") as HTMLInputElement)
+  const searchText = (document.getElementById("searchText") as HTMLInputElement)
     .value;
 
-  let container: HTMLDivElement = document.getElementById(
+  const container: HTMLDivElement = document.getElementById(
     "movie-container"
   ) as HTMLDivElement;
   container.innerHTML = "";
@@ -33,11 +40,21 @@ export async function handleSubmit() {
   }
 }
 
+export const handleSort = () => {
+  const container = document.getElementById("movie-container") as HTMLDivElement;
+  container.innerHTML = "";
+
+  movies = movieSort(movies, desc);
+  desc = !desc;
+
+  createHtml(movies, container);
+};
+
 export const createHtml = (movies: IMovie[], container: HTMLDivElement) => {
   for (let i = 0; i < movies.length; i++) {
-    let movie = document.createElement("div");
-    let title = document.createElement("h3");
-    let img = document.createElement("img");
+    const movie = document.createElement("div");
+    const title = document.createElement("h3");
+    const img = document.createElement("img");
 
     movie.classList.add("movie");
     title.innerHTML = movies[i].Title;
